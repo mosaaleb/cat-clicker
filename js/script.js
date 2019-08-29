@@ -1,8 +1,10 @@
-let clicksNumber = 0;
+const catImages = document.querySelectorAll('.cat-img');
 
-let catPicture = document.getElementById("cat-image");
-catPicture.addEventListener('click', function() {
-  clicksNumber++;
-  clicksNumberContainer = document.querySelector(".clicks-counter");
-  clicksNumberContainer.innerHTML = clicksNumber;
-}, false);
+catImages.forEach((image) => {
+  let clicksNumber = 0;
+  const imageCopy = image;
+  image.addEventListener('click', () => {
+    clicksNumber += 1;
+    imageCopy.nextElementSibling.firstChild.innerHTML = clicksNumber;
+  }, false);
+});
