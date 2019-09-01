@@ -57,6 +57,7 @@ catListView = {
       listItem.addEventListener('click', () => {
         controller.setCurrentCat(cat);
         catView.render();
+        adminView.render();
       });
       this.catList.appendChild(listItem);
     });
@@ -72,6 +73,7 @@ catView = {
     this.catImg.addEventListener('click', () => {
       controller.incrementCounter();
       this.render();
+      adminView.render();
     });
   },
 
@@ -86,7 +88,30 @@ catView = {
 adminView = {
   init() {
     this.adminArea = document.getElementById('admin-form');
+    this.adminAreaButton = document.getElementById('admin-btn');
+    this.nameInput = document.getElementById('name-input');
+    this.clicksInput = document.getElementById('clicks-input');
+    this.submitButton = document.getElementById('submit');
+
     this.adminArea.style.display = 'none';
+    this.adminAreaButton.addEventListener('click', () => {
+      this.adminArea.style.display = this.adminArea.style.display === 'block' ? 'none' : 'block';
+      this.render();
+    });
+  },
+
+  render() {
+    const currentCat = controller.getCurrentCat();
+    this.nameInput.value = currentCat.name;
+    this.clicksInput.value = currentCat.clicksCount;
+    this.submitButton.addEventListener('click', (e) => {
+      const name = this.nameInput.value;
+      const clicksCount = this.clicksInput.value;
+      controller.updateCat(name, clicksCount);
+      catListView.render();
+      catView.render();
+      e.preventDefault();
+    });
   },
 };
 
@@ -115,6 +140,11 @@ controller = {
 
   incrementCounter() {
     model.currentCat.clicksCount += 1;
+  },
+
+  updateCat(name, clicksCount) {
+    model.currentCat.name = name;
+    model.currentCat.clicksCount = clicksCount;
   },
 };
 
