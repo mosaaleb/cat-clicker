@@ -1,12 +1,12 @@
-/**
-  * MODEL
-*/
 let model = { };
 let controller = { };
 let catView = { };
 let catListView = { };
+let adminView = { };
 
-
+/**
+  * MODEL
+*/
 model = {
   currentCat: null,
 
@@ -42,7 +42,6 @@ model = {
 /**
   * VIEWS
 */
-
 catListView = {
   init() {
     this.catList = document.getElementById('cat-list');
@@ -79,20 +78,27 @@ catView = {
   render() {
     const currentCat = controller.getCurrentCat();
     this.catName.textContent = currentCat.name;
-    this.clicksCount.textContent = currentCat.clicksCount;
+    this.clicksCount.textContent = `${currentCat.clicksCount} clicks`;
     this.catImg.src = currentCat.imgSrc;
+  },
+};
+
+adminView = {
+  init() {
+    this.adminArea = document.getElementById('admin-form');
+    this.adminArea.style.display = 'none';
   },
 };
 
 /**
   * CONTROLLER
 */
-
 controller = {
   init() {
     [model.currentCat] = model.cats;
     catListView.init();
     catView.init();
+    adminView.init();
   },
 
   getCurrentCat() {

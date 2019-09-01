@@ -4,12 +4,19 @@ main {
 }
 
 /* SIDEBAR */
+.menu {
+  width: 20%;
+}
+
 .cat-list {
   list-style: none;
-  width: 12%;
+  padding: 0;
+  margin: 0;
 }
 
 .cat-list li {
+  width: 50%;
+  margin: 0 auto;
   cursor: pointer;
   text-align: center;
   border-radius: 1rem;
@@ -20,6 +27,33 @@ main {
   background-color: #F64C72;
 }
 
+.admin-area{
+  margin-top: 2rem;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.admin-area * {
+  margin-top: .5rem;
+}
+
+.btn {
+  background-color: #F64C72;
+  outline: none;
+  padding: .5rem;
+  color: #fff;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.save-button {
+  float: left;
+}
+
+input {
+  margin-bottom: 1rem;
+}
 
 /* CONTENT */
 .cat-item {
@@ -31,7 +65,7 @@ main {
   align-items: start;
 }
 
-.cat-item .cat-name, .cat-item .clicks-count {
+.cat-name, .clicks-count {
   font-weight: bold;
   font-size: 2rem;
 }

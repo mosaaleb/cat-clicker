@@ -15,11 +15,22 @@
 
   <main>
 
-    <aside id="cat-list" class="cat-list">
+    <aside class="menu">
+      <ul id="cat-list" class="cat-list">
+      </ul>
+      <div class="admin-area">
+        <button class="admin-btn btn">Admin</button>
+        <form id="admin-form" class="admin-form">
+          <input type="text" placeholder="Change cat name">
+          <input type="text" placeholder="Change clicks count">
+          <input type="submit" value="Save" class="save-button btn" id="submit">
+        </form>
+      </div>
     </aside>
+    
 
     <div id="cat-item" class="cat-item">
-      <h5 id="cat-name" class="cat-name"></h5>
+      <p id="cat-name" class="cat-name"></p>
       <img id="cat-img" class="cat-img">
       <p id="clicks-count" class="clicks-count"></p>
     </div>
