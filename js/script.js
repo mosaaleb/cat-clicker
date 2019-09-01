@@ -144,7 +144,7 @@ controller = {
 
   updateCat(name, clicksCount) {
     model.currentCat.name = name;
-    model.currentCat.clicksCount = clicksCount;
+    model.currentCat.clicksCount = parseInt(clicksCount, 10);
   },
 };
 
