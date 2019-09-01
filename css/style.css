@@ -27,14 +27,14 @@ main {
   background-color: #F64C72;
 }
 
-.admin-area{
-  margin-top: 2rem;
+.admin-area {
+  padding: 2rem;
   width: 50%;
   margin: 0 auto;
 }
 
 .admin-area * {
-  margin-top: .5rem;
+  margin-top: 1rem;
 }
 
 .btn {
@@ -45,11 +45,10 @@ main {
   border: none;
   border-radius: 10%;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
 }
 
-.save-button {
-  float: left;
-}
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
